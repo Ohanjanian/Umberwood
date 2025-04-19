@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Umberwood: мебель из ЛДСП на заказ - кухни, шкафы, столы">
+    <meta name="keywords" content="мебель из ЛДСП, мебель на заказ, кухни, шкафы, Umberwood">
+    <title>Umberwood | Мебель из ЛДСП</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Umberwood Logo" class="logo-img">
+            <span class="logo-text">Umberwood</span>
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="furniture.html" class="active">Мебель из ЛДСП</a></li>
+                <li><a href="wood.html">Изделия из дерева</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="burger" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Hero секция для страницы мебели -->
+        <section class="hero hero-furniture">
+            <h1>Мебель из ЛДСП на заказ</h1>
+            <p>Индивидуальные решения для вашего интерьера</p>
+        </section>
+
+        <section class="gallery">
+            <div class="gallery-grid">
+                <div class="gallery-item" data-title="Nika`s Place, 2023" data-desc="Reception for Nika`s Place." data-images='["img/Mebel/1/Nika1.jpg", "img/Mebel/1/Nika2.jpg", "img/Mebel/1/Nika3.jpg", "img/Mebel/1/Nika4.jpg"]'>
+                    <img src="img/Mebel/1/Nika1.jpg" alt="Reception">
+                    <p>Nika`s Place, 2023</p>
+                </div>
+                <div class="gallery-item" data-title="Dressing Room, 2023" data-desc="Dressing Room for Nika`s Place." data-images='["img/Mebel/2/NikaW1.jpg", "img/Mebel/2/NikaW2.jpg", "img/Mebel/2/NikaW3.jpg", "img/Mebel/2/NikaW4.jpg"]'>
+                    <img src="img/Mebel/2/NikaW1.jpg" alt="Dressing Room, 2023">
+                    <p>Dressing Room, 2023</p>
+                </div>
+                <div class="gallery-item" data-title="Рабочий стол, 2024" data-desc="Компактный стол из ЛДСП для домашнего офиса." data-images='["img/gallery/table1.jpg", "img/gallery/table2.jpg"]'>
+                    <img src="img/gallery/table1.jpg" alt="Стол из ЛДСП">
+                    <p>Рабочий стол, 2024</p>
+                </div>
+                <div class="gallery-item" data-title="Навесная полка, 2023" data-desc="Минималистичная полка для гостиной или спальни." data-images='["img/gallery/shelf1.jpg", "img/gallery/shelf2.jpg"]'>
+                    <img src="img/gallery/shelf1.jpg" alt="Полка из ЛДСП">
+                    <p>Навесная полка, 2023</p>
+                </div>
+                <div class="gallery-item" data-title="Кухня в стиле минимализм, 2025" data-desc="Кухня с гладкими фасадами и скрытыми ручками." data-images='["img/gallery/minimal1.jpg", "img/gallery/minimal2.jpg"]'>
+                    <img src="img/gallery/minimal1.jpg" alt="Кухня минимализм из ЛДСП">
+                    <p>Кухня в стиле минимализм, 2025</p>
+                </div>
+                <div class="gallery-item" data-title="Шкаф для гостиной, 2025" data-desc="Многофункциональный шкаф с открытыми и закрытыми секциями." data-images='["img/gallery/living1.jpg", "img/gallery/living2.jpg"]'>
+                    <img src="img/gallery/living1.jpg" alt="Шкаф для гостиной из ЛДСП">
+                    <p>Шкаф для гостиной, 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Модальное окно -->
+        <div class="modal" id="projectModal">
+            <div class="modal-content">
+                <span class="modal-close">×</span>
+                <div class="modal-image-container">
+                    <button class="modal-prev">❮</button>
+                    <img class="modal-img" src="" alt="Project Image">
+                    <button class="modal-next">❯</button>
+                </div>
+                <h2 class="modal-title"></h2>
+                <p class="modal-desc"></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <p>© 2025 Umberwood. Все права защищены.</p>
+        <p>Телефон: +7 (XXX) XXX-XX-XX | Email: info@umberwood.ru</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

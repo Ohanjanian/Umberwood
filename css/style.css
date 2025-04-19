@@ -1,0 +1,465 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Шапка */
+header {
+    background: #f4f4f4;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-img {
+    width: 40px; /* Размер логотипа */
+    height: 40px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 2rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-list li a:hover {
+    color: #007bff;
+}
+
+.nav-list li a.active {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Бургер-меню */
+.burger {
+    display: none; /* Скрыто по умолчанию */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000; /* Выше других элементов */
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Навигация */
+.nav {
+    display: block; /* Видима на больших экранах */
+}
+
+.nav.active {
+    display: block; /* Видима при активации на маленьких экранах */
+}
+
+/* Главная секция */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-image: url('../img/MainScreen/3.jpg'); /* Заглушка для hero */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff; /* Белый текст для читаемости */
+    min-height: 400px; /* Зарезервированное место для изображения */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Затемнение для читаемости текста */
+}
+
+.hero h1, .hero p, .hero .btn {
+    position: relative; /* Чтобы текст был поверх затемнения */
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Секция мебели */
+.furniture {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #f9f9f9;
+}
+
+.furniture h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.furniture p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Галерея */
+.gallery {
+    padding: 2rem;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Указывает, что элемент кликабелен */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Лёгкое увеличение при наведении */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-item p {
+    padding: 1rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Модальное окно */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Затемнённый фон */
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease; /* Плавное появление */
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 10px;
+    max-width: 1000px;
+    width: 90%;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-close:hover {
+    color: #007bff;
+}
+
+.modal-image-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.modal-img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: opacity 0.3s ease; /* Плавная смена изображений */
+}
+
+.modal-prev, .modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modal-prev:hover, .modal-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-prev {
+    left: 10px;
+}
+
+.modal-next {
+    right: 10px;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.modal-desc {
+    font-size: 1rem;
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Категории */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.category {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px; /* Фиксированная высота для изображения */
+    color: #fff; /* Белый текст для читаемости */
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Затемнение для читаемости текста */
+    border-radius: 10px;
+}
+
+.category h2, .category p, .category a {
+    position: relative; /* Чтобы текст был поверх затемнения */
+    z-index: 1;
+}
+
+.category.ldsp {
+    background-image: url('../img/MainScreen/1.jpg'); /* Изображение для ЛДСП */
+}
+
+.category.wood {
+    background-image: url('../img/MainScreen/2.jpg'); /* Изображение для дерева */
+}
+
+.category h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.category p {
+    margin-bottom: 1rem;
+}
+
+.category a {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.category a:hover {
+    background: #007bff;
+    border-color: #007bff;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #f4f4f4;
+    margin-top: 2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .burger {
+        display: block !important; /* Гарантируем видимость */
+    }
+
+    .nav {
+        display: none; /* Скрываем навигацию по умолчанию */
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #f4f4f4;
+        z-index: 999; /* Ниже бургера, но выше контента */
+    }
+
+    .nav.active {
+        display: block; /* Показываем при активации */
+    }
+
+    .nav-list {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .nav-list li {
+        margin: 1rem 0;
+    }
+
+    .categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .hero {
+        display: none; /* Скрываем hero на мобильных для всех страниц */
+    }
+
+    .furniture {
+        display: none;
+    }
+
+    .logo-img {
+        width: 30px; /* Меньший размер для мобильных */
+        height: 30px;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .gallery-item img {
+        height: 150px; /* Меньше высота для мобильных */
+    }
+
+    .modal-img {
+        height: 200px; /* Меньше высота для мобильных */
+    }
+
+    .modal-content {
+        padding: 1rem;
+    }
+
+    .modal-prev, .modal-next {
+        padding: 0.3rem 0.7rem;
+        font-size: 1.2rem;
+    }
+}
